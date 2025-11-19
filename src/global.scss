@@ -34,4 +34,11 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+/* Force a dark theme for the whole app */
+@import "@ionic/angular/css/palettes/dark.always.css";
+
+/*
+	Alternatives:
+	- Use dark.class.css and toggle `document.body.classList.add('dark')` in code.
+	- Keep dark.system.css to follow the OS preference.
+*/

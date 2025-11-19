@@ -7,5 +7,14 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
   imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent {
-  constructor() {}
+  constructor() {
+    // Ensure the 'dark' class is present on app start.
+    // This is useful if any components/styles rely on the .dark class.
+    try {
+      document.body.classList.add('dark');
+    } catch (e) {
+      // document may be undefined in some server-side contexts; ignore safely.
+      // No-op.
+    }
+  }
 }

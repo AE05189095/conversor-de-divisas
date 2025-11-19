@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      DivisApp 05189095
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">DivisApp 05189095</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="converter">
+    <ion-item>
+      <!-- Mantener la etiqueta siempre arriba para evitar superposición -->
+      <ion-label position="stacked">Cantidad en Quetzales (GTQ)</ion-label>
+      <ion-input type="number" [(ngModel)]="quetzales" placeholder="Ej. 40"></ion-input>
+    </ion-item>
+
+    <div class="button-row">
+      <ion-button class="action-btn" color="primary" (click)="convert()">Convertir</ion-button>
+  <!-- Use color="primary" so outline border and text match the Convertir button -->
+  <ion-button class="action-btn outline-primary" color="primary" fill="outline" (click)="reset()">Borrar</ion-button>
+    </div>
+
+    <div *ngIf="dolares !== null" class="result">
+      <h2>Resultado</h2>
+      <p>{{ quetzales }} GTQ = <strong>{{ dolares }} USD</strong></p>
+      <p class="muted">Tasa usada: 1 USD = 8 GTQ</p>
+    </div>
+
+    <div *ngIf="triedConvert && dolares === null && quetzales !== null" class="result error">
+      <p>Ingrese un número válido.</p>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,57 @@
+/* Styles for the converter tab: center buttons and result text */
+.converter {
+	/* Add extra space below the page title so the input area doesn't overlap / feel cramped */
+	margin-top: 28px;
+}
+
+/* Make the stacked label larger and with a bit more spacing from the title and input */
+.converter ion-label {
+	font-size: 1.15rem; /* slightly larger label */
+	font-weight: 600;
+	margin-bottom: 8px; /* spacing between label and input */
+	display: block;
+}
+
+.button-row {
+	margin-top: 16px;
+	display: flex;
+	gap: 12px;
+	justify-content: center; /* center horizontally */
+	flex-wrap: wrap; /* allow wrapping on small screens */
+}
+
+.action-btn {
+	/* Allow buttons to size naturally but keep a minimum width */
+	min-width: 120px;
+	flex: 0 0 auto; /* don't stretch */
+}
+
+/* Make the outline 'Borrar' button show the primary color on its border and text */
+.action-btn.outline-primary {
+	/* Ionic outline buttons support the --border-color CSS variable */
+	--border-color: var(--ion-color-primary);
+	/* Ensure the text uses the primary color */
+	color: var(--ion-color-primary) !important;
+}
+
+/* Improve visual when the outline button is focused/hovered */
+.action-btn.outline-primary:focus,
+.action-btn.outline-primary:hover {
+	/* Keep the border color consistent on hover/focus */
+	--border-color: var(--ion-color-primary);
+}
+
+.result {
+	margin-top: 18px;
+	text-align: center; /* center the result text */
+}
+
+.result .muted {
+	font-size: 0.9em;
+	color: var(--ion-color-medium);
+}
+
+.result.error {
+	color: var(--ion-color-danger);
+}
+
