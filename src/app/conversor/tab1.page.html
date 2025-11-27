@@ -26,9 +26,14 @@
   <ion-button class="action-btn outline-primary" color="primary" fill="outline" (click)="reset()">Borrar</ion-button>
     </div>
 
+    <ion-item lines="none">
+      <ion-label>Modo Privado</ion-label>
+      <ion-toggle slot="end" [(ngModel)]="modoPrivado"></ion-toggle>
+    </ion-item>
+
     <div *ngIf="dolares !== null" class="result">
       <h2>Resultado</h2>
-      <p>{{ quetzales }} GTQ = <strong>{{ dolares }} USD</strong></p>
+      <p>{{ quetzales }} GTQ = <strong>{{ getDolaresMostrados() }} USD</strong></p>
       <p class="muted">Tasa usada: 1 USD = 8 GTQ</p>
     </div>
 
